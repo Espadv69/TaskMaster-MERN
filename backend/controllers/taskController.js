@@ -58,5 +58,15 @@ export const createTask = async (req, res) => {
         .status(400)
         .json({ message: 'Tags must be an array of strings.' })
     }
+
+    // Create a new task with validated data
+    const newTask = new TASK_MODEL({
+      title,
+      description,
+      completed: completed || false,
+      priority: priority || 'low',
+      tags: tags || [],
+      updatedAt: Date.now(),
+    })
   } catch (err) {}
 }
