@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Espadv69/TaskMaster-MERN/issues"
   },
-  "homepage": "https://github.com/Espadv69/TaskMaster-MERN#readme"
+  "homepage": "https://github.com/Espadv69/TaskMaster-MERN#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
