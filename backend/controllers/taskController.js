@@ -112,5 +112,18 @@ export const updateTask = async (req, res) => {
         .status(400)
         .json({ message: 'Tags must be an array of strings.' })
     }
+
+    // Update just the fields permitted in the request body
+    const updatedTask = await TASK_MODEL.findByIdAndUpdate(
+      id,
+      { title, description, completed, priority, tags },
+      { new: true, runValidators: true },
+    )
+    /**
+     * { new: true, runValidators: true }
+     * - new: true returns the updated document
+     * - runValidators: true runs the validators 
+     * on the updated document and not the original document
+     */
   } catch (err) {}
 }
