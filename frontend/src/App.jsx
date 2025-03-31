@@ -1,8 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { TASK_LIST_ROUTE, TASK_FORM_ROUTE } from './utils/routesString'
+
+import TaskFormPage from './pages/TaskFormPage'
+import TaskListPage from './pages/TaskListPage'
+
 const App = () => {
   return (
-    <div className="app">
-      <h1>Hello, this is a test to see font-family</h1>
-    </div>
+    <Router>
+      {/* Add NavBar */}
+      <Routes>
+        <Route path={TASK_LIST_ROUTE} element={<TaskListPage />} />
+        <Route path={TASK_FORM_ROUTE} element={<TaskFormPage />} />
+      </Routes>
+    </Router>
   )
 }
 
