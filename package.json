@@ -1,0 +1,28 @@
+{
+  "name": "taskmaster-mern",
+  "version": "1.0.0",
+  "description": "A dynamic to-do list app built with the MERN stack, featuring full CRUD functionality.",
+  "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Espadv69/TaskMaster-MERN.git"
+  },
+  "keywords": [
+    "todo",
+    "mern",
+    "task manager",
+    "productivity",
+    "CRUD"
+  ],
+  "author": "Espadv69",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Espadv69/TaskMaster-MERN/issues"
+  },
+  "homepage": "https://github.com/Espadv69/TaskMaster-MERN#readme"
+}
