@@ -74,5 +74,15 @@ export const createTask = async (req, res) => {
 
     // Send the saved task as a response
     res.status(201).json(savedTask)
-  } catch (err) {}
+  } catch (err) {
+    // Specific error to failed validation
+    if (err.name === 'ValidationError') {
+      return res
+        .status(400)
+        .json({ message: 'Validation error', error: err.message })
+    }
+
+    // General error handling
+    res.status(500).json({ message: 'Error creating task', error: err })
+  }
 }
