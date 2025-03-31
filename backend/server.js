@@ -1,3 +1,5 @@
+import { HOME_ROUTE, API_ROUTE } from './utils/consts'
+
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
@@ -24,8 +26,6 @@ const connectDB = async () => {
 }
 
 // Get main route 💚
-const HOME_ROUTE = '/'
-
 app.get(HOME_ROUTE, async (req, res) => {
   res.send('Welcome to the backend server! 💚')
 })
