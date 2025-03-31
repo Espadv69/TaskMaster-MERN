@@ -42,4 +42,17 @@ const startServer = async () => {
   const server = app.listen(PORT, () =>
     console.log(`Server running on http://localhost:${PORT} 🚀`),
   )
+
+  // Clean up on exit 🧼
+  const cleanUp = async () => {
+    console.log('Cleaning up... 🧼')
+
+    // Try to close the server
+    try {
+      await mongoose.connection.close()
+      console.log('MongoDB connection closed 🗑️')
+    } catch (err) {
+      console.error('Error closing MongoDB connection ❌', err)
+    }
+  }
 }
