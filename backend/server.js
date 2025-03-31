@@ -1,4 +1,4 @@
-import { HOME_ROUTE, API_ROUTE } from './utils/consts'
+import { HOME_ROUTE, API_ROUTE } from './utils/consts.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -65,7 +65,6 @@ const startServer = async () => {
   // Handle process termination signals
   process.on('SIGINT', cleanUp) // Ctrl + C
   process.on('SIGTERM', cleanUp) // Heroku or other cloud providers
-  process.on('exit', cleanUp) // Normal exit
 }
 
 // Call the startServer function to start the server 🚀
