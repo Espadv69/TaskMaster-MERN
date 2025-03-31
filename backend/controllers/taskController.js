@@ -106,5 +106,11 @@ export const updateTask = async (req, res) => {
         message: 'Invalid priority value. Allowed: low, medium, high.',
       })
     }
+
+    if (tags && !Array.isArray(tags)) {
+      return res
+        .status(400)
+        .json({ message: 'Tags must be an array of strings.' })
+    }
   } catch (err) {}
 }
