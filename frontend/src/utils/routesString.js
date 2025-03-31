@@ -1,2 +1,2 @@
-export const TASK_LIST = '/'
-export const TASK_FORM = '/form'
+export const TASK_LIST_ROUTE = '/'
+export const TASK_FORM_ROUTE = '/form'
