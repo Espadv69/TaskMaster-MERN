@@ -1,5 +1,7 @@
 import TASK_MODEL from '../models/Task.js'
 
+const PRIORITIES = ['low', 'medium', 'high']
+
 // Get all tasks 😄
 export const getTasks = async (req, res) => {
   try {
@@ -45,8 +47,7 @@ export const createTask = async (req, res) => {
     }
 
     // Priority validation
-    const validPriorities = ['low', 'medium', 'high']
-    if (priority && !validPriorities.includes(priority)) {
+    if (priority && !PRIORITIES.includes(priority)) {
       return res.status(400).json({
         message: 'Invalid priority value. Allowed: low, medium, high.',
       })
@@ -97,6 +98,13 @@ export const updateTask = async (req, res) => {
     const task = await TASK_MODEL.findById(id)
     if (!task) {
       return res.status(404).json({ message: 'Task not found' })
+    }
+
+    // Manual validation before updating
+    if (priority && !PRIORITIES.includes(priority)) {
+      return res.status(400).json({
+        message: 'Invalid priority value. Allowed: low, medium, high.',
+      })
     }
   } catch (err) {}
 }
