@@ -54,5 +54,15 @@ const startServer = async () => {
     } catch (err) {
       console.error('Error closing MongoDB connection ❌', err)
     }
+
+    server.close(() => {
+      console.log('Server closed ✅')
+      process.exit(0)
+    })
   }
+
+  // Handle process termination signals
+  process.on('SIGINT', cleanUp) // Ctrl + C
+  process.on('SIGTERM', cleanUp) // Heroku or other cloud providers
+  process.on('exit', cleanUp) // Normal exit
 }
