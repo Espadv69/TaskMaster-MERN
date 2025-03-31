@@ -30,3 +30,28 @@ export const getTaskById = async (req, res) => {
     res.status(500).json({ message: 'Error fetching task', error: err })
   }
 }
+
+// Create a new task 😄
+export const createTask = async (req, res) => {
+  try {
+    // Destructure the task data from the request body
+    const { title, description, completed, priority, tags } = req.body
+
+    // Manual validation
+    if (!title || !description) {
+      return res
+        .status(400)
+        .json({ message: 'Title and description are required' })
+    }
+
+    // Priority validation
+    const validPriorities = ['low', 'medium', 'high']
+    if (priority && !validPriorities.includes(priority)) {
+      return res
+        .status(400)
+        .json({
+          message: 'Invalid priority value. Allowed: low, medium, high.',
+        })
+    }
+  } catch (err) {}
+}
