@@ -1,4 +1,5 @@
 import { HOME_ROUTE, API_ROUTE } from './utils/consts.js'
+import router from './routes/taskRoutes.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -11,6 +12,9 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+
+// Routes
+app.use(API_ROUTE, router)
 
 // MongoDB connection 🐢
 const MONGO_URI = process.env.MONGO_URI
