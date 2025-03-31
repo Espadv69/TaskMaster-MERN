@@ -1,0 +1,39 @@
+:root {
+  --primary-color: #205781;
+  --secondary-color: #4F959D;
+  --tertiary-color: #98D2C0;
+  --quaternary-color: #F6F8D5;
+}
+
+.nav {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav__link {
+  color: var(--tertiary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--secondary-color);
+}
