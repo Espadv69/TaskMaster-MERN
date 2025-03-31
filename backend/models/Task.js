@@ -9,3 +9,8 @@ const taskSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 })
+
+const MODEL_NAME = 'Task'
+const TASK_MODEL = mongoose.model(MODEL_NAME, taskSchema)
+
+export default TASK_MODEL
