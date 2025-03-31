@@ -68,5 +68,11 @@ export const createTask = async (req, res) => {
       tags: tags || [],
       updatedAt: Date.now(),
     })
+
+    // Save the new task to the database
+    const savedTask = await newTask.save()
+
+    // Send the saved task as a response
+    res.status(201).json(savedTask)
   } catch (err) {}
 }
