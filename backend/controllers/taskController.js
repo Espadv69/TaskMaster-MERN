@@ -122,8 +122,11 @@ export const updateTask = async (req, res) => {
     /**
      * { new: true, runValidators: true }
      * - new: true returns the updated document
-     * - runValidators: true runs the validators 
-     * on the updated document and not the original document
+     * - runValidators: true validates the update against the schema
      */
-  } catch (err) {}
+
+    res.status(200).json(updatedTask)
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating task', error: err })
+  }
 }
