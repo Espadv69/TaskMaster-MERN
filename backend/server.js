@@ -47,7 +47,7 @@ const startServer = async () => {
   const cleanUp = async () => {
     console.log('Cleaning up... 🧼')
 
-    // Try to close the server
+    // Try to close the server 📂
     try {
       await mongoose.connection.close()
       console.log('MongoDB connection closed 🗑️')
@@ -55,6 +55,7 @@ const startServer = async () => {
       console.error('Error closing MongoDB connection ❌', err)
     }
 
+    // Close the server 📁
     server.close(() => {
       console.log('Server closed ✅')
       process.exit(0)
