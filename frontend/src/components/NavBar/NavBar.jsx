@@ -6,7 +6,7 @@ import './NavBar.css'
 const NavBar = () => {
   return (
     <nav className="nav">
-      <h2 className="nav__title">To-Do manager</h2>
+      <h2 className="nav__title">To-Do Manager</h2>
       <div className="nav__links">
         <Link className="nav__link" to={TASK_LIST_ROUTE}>
           Tasks List
