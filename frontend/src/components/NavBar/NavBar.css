@@ -30,10 +30,28 @@
 .nav__link {
   color: var(--tertiary-color);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease-in-out;
 }
 
 .nav__link:hover {
   color: var(--secondary-color);
+}
+
+@media (max-width: 550px) {
+  .nav {
+    padding: .5rem 1rem;
+  }
+
+  .nav__title {
+    font-size: 1.2rem;
+  }
+
+  .nav__links {
+    gap: 1rem;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+  }
 }
