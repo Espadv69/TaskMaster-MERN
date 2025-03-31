@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { TASK_LIST_ROUTE, TASK_FORM_ROUTE } from './utils/routesString'
+import { TASK_LIST_ROUTE, TASK_FORM_ROUTE } from './utils/routesString.js'
 
 import TaskFormPage from './pages/TaskFormPage'
 import TaskListPage from './pages/TaskListPage'
