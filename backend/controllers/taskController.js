@@ -16,12 +16,17 @@ export const getTasks = async (req, res) => {
 // Get a single task by ID 😄
 export const getTaskById = async (req, res) => {
   try {
+    // Fetch a single task by ID from the database
     const task = await TASK_MODEL.findById(req.params.id)
 
+    // Check if the task exists
     if (!task) {
       return res.status(404).json({ message: 'Task not found' })
     }
 
+    // If the task exists, send it as a response
     res.status(200).json(task)
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching task', error: err })
+  }
 }
