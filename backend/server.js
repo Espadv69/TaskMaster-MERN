@@ -66,3 +66,6 @@ const startServer = async () => {
   process.on('SIGTERM', cleanUp) // Heroku or other cloud providers
   process.on('exit', cleanUp) // Normal exit
 }
+
+// Call the startServer function to start the server 🚀
+startServer()
