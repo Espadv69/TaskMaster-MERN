@@ -47,11 +47,16 @@ export const createTask = async (req, res) => {
     // Priority validation
     const validPriorities = ['low', 'medium', 'high']
     if (priority && !validPriorities.includes(priority)) {
+      return res.status(400).json({
+        message: 'Invalid priority value. Allowed: low, medium, high.',
+      })
+    }
+
+    // Make sure tags is an array
+    if (tags && !Array.isArray(tags)) {
       return res
         .status(400)
-        .json({
-          message: 'Invalid priority value. Allowed: low, medium, high.',
-        })
+        .json({ message: 'Tags must be an array of strings.' })
     }
   } catch (err) {}
 }
