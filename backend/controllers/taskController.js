@@ -86,3 +86,17 @@ export const createTask = async (req, res) => {
     res.status(500).json({ message: 'Error creating task', error: err })
   }
 }
+
+// Update a task by ID 😄
+export const updateTask = async (req, res) => {
+  try {
+    const { id } = req.params
+    const { title, description, completed, priority, tags } = req.body
+
+    // Validate if the task ID exists
+    const task = await TASK_MODEL.findById(id)
+    if (!task) {
+      return res.status(404).json({ message: 'Task not found' })
+    }
+  } catch (err) {}
+}
