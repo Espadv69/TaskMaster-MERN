@@ -38,8 +38,7 @@ const TaskForm = () => {
       setTagLength(0)
       setError('')
     } else {
-      setError('Failed to add task. Please try again.')
-      // ToDo: Add handling success message
+      setError('Failed to add task. Maybe the server is down.')
     }
   }
 
@@ -76,12 +75,22 @@ const TaskForm = () => {
       <form onSubmit={handleSubmit} className="task-form__form">
         <label className="task-form__label">
           Title
-          <input type="text" className="task-form__input" />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="task-form__input"
+          />
         </label>
 
         <label className="task-form__label">
-          Title
-          <input type="text" className="task-form__input" />
+          Description
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="task-form__input"
+          />
         </label>
 
         <select
