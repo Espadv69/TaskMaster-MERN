@@ -91,6 +91,8 @@ const TaskForm = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="task-form__input"
+            maxLength={20}
+            placeholder="Enter task title"
           />
         </label>
 
@@ -101,6 +103,8 @@ const TaskForm = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="task-form__input"
+            maxLength={100}
+            placeholder="Enter task description"
           />
         </label>
 
