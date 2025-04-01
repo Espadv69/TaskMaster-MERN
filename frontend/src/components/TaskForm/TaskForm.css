@@ -110,3 +110,16 @@
   background: var(--primary-color);
   cursor: pointer;
 }
+
+.tags__length {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-align: center;
+  padding: 6px;
+  background: var(--quaternary-color);
+  border-radius: 5px;
+  border: 2px solid var(--secondary-color);
+}
