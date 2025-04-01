@@ -1,0 +1,112 @@
+:root {
+  --primary-color: #205781;
+  --secondary-color: #4F959D;
+  --tertiary-color: #98D2C0;
+  --quaternary-color: #F6F8D5;
+}
+
+.task-form__section {
+  background: var(--quaternary-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.task-form__header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.task-form__header-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.task-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-form__label {
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.task-form__input, 
+.task-form__select {
+  padding: 8px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.task-form__input:focus, 
+.task-form__select:focus {
+  border-color: var(--primary-color);
+}
+
+.task-form__error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.task-form__button {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-form__button:hover {
+  background: var(--secondary-color);
+}
+
+.task-form__footer {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--tertiary-color);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.task-form__footer-title {
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tag__span {
+  background: var(--secondary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.tag__span:hover {
+  background: var(--primary-color);
+  cursor: pointer;
+}
