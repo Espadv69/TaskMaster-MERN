@@ -55,7 +55,7 @@
 
 .task-form__error {
   color: red;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -137,5 +137,20 @@
 
   .task-form__header-title {
     font-size: 20px;
+  }
+
+  .task-form__input,
+  .task-form__select {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .task-form__error {
+    font-size: 14px;
+  }
+
+  .task-form__button {
+    font-size: 14px;
+    padding: 8px;
   }
 }
