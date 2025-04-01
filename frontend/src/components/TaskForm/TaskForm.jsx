@@ -40,6 +40,12 @@ const TaskForm = () => {
 
   // Function to handle tag input change
   const handleTagInputChange = (e) => {
+    if (e.key === 'Backspace' && tagInput === '') {
+      e.preventDefault()
+      setTags(tags.slice(0, -1))
+      return
+    }
+
     if (e.key === 'Enter' && tagInput) {
       e.preventDefault()
       setTags([...tags, tagInput.trim()])
