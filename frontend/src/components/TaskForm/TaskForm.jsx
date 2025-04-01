@@ -126,6 +126,7 @@ const TaskForm = () => {
             onChange={(e) => setTagInput(e.target.value)}
             onKeyDown={handleTagInputChange}
             maxLength={12}
+            placeholder="Enter to add a tag or Backspace to remove one"
           />
         </label>
 
