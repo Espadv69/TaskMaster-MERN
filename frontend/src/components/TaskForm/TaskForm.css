@@ -38,7 +38,7 @@
   flex-direction: column;
 }
 
-.task-form__input, 
+.task-form__input,
 .task-form__select {
   padding: 8px;
   border: 2px solid var(--secondary-color);
@@ -48,7 +48,7 @@
   transition: border 0.3s;
 }
 
-.task-form__input:focus, 
+.task-form__input:focus,
 .task-form__select:focus {
   border-color: var(--primary-color);
 }
@@ -122,4 +122,20 @@
   background: var(--quaternary-color);
   border-radius: 5px;
   border: 2px solid var(--secondary-color);
+}
+
+@media (max-width: 550px) {
+  .task-form__section {
+    padding: 15px;
+    margin: 1rem auto;
+    max-width: 400px;
+  }
+
+  .task-form__header {
+    margin-bottom: 10px;
+  }
+
+  .task-form__header-title {
+    font-size: 20px;
+  }
 }
