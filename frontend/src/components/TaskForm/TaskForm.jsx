@@ -45,14 +45,18 @@ const TaskForm = () => {
   const handleTagInputChange = (e) => {
     if (e.key === 'Enter' && tagInput) {
       e.preventDefault()
-      setTags([...tags, tagInput])
+      setTags([...tags, tagInput.trim()])
       setTagInput('')
     }
   }
 
   return (
     <section className="task-form__section">
-      <h1>Add Task</h1>
+      <header className="task-form__header">
+        <h1 className="task-form__header-title">Add Task</h1>
+      </header>
+
+      <form onSubmit={handleSubmit} className="task-form__form"></form>
     </section>
   )
 }
