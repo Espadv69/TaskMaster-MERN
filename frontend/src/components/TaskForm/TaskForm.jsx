@@ -8,6 +8,8 @@ const TaskForm = () => {
   const [description, setDescription] = useState('')
   const [priority, setPriority] = useState('low')
   const [tags, setTags] = useState([])
+  const [tagLength, setTagLength] = useState(0)
+  const [maxLength] = useState(5)
   const [tagInput, setTagInput] = useState('')
   const [error, setError] = useState('')
 
@@ -42,13 +44,23 @@ const TaskForm = () => {
   const handleTagInputChange = (e) => {
     if (e.key === 'Backspace' && tagInput === '') {
       e.preventDefault()
+
+      if (tagLength === 0 && tags.length === 0) {
+        return
+      }
+      setTagLength(tagLength - 1)
       setTags(tags.slice(0, -1))
+      return
+    }
+
+    if (tags.length >= 5) {
       return
     }
 
     if (e.key === 'Enter' && tagInput) {
       e.preventDefault()
       setTags([...tags, tagInput.trim()])
+      setTagLength(tagLength + 1)
       setTagInput('')
     }
   }
@@ -58,7 +70,6 @@ const TaskForm = () => {
       <header className="task-form__header">
         <h1 className="task-form__header-title">Add Task</h1>
       </header>
-
       <form onSubmit={handleSubmit} className="task-form__form">
         <label className="task-form__label">
           Title
@@ -95,7 +106,6 @@ const TaskForm = () => {
         {error && <p className="task-form__error">{error}</p>}
         <button className="task-form__button">Add Task</button>
       </form>
-
       <footer className="task-form__footer">
         <h2 className="task-form__footer-title">Tags Added</h2>
 
@@ -107,6 +117,7 @@ const TaskForm = () => {
           ))}
         </div>
       </footer>
+      {tagLength} / {maxLength} tags added
     </section>
   )
 }
