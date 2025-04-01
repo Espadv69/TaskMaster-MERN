@@ -50,39 +50,7 @@ const TaskForm = () => {
 
   return (
     <section className="task-form__section">
-      <input
-        type="text"
-        value={tagInput}
-        onChange={(e) => setTagInput(e.target.value)}
-        onKeyDown={handleTagInputChange}
-        maxLength={12}
-      />
-      <div
-        className="tags"
-        style={{
-          display: tags.length ? 'grid' : 'none',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '5px',
-          padding: '10px',
-        }}
-      >
-        {tags.map((tag, index) => (
-          <span
-            key={index}
-            className="tag"
-            style={{
-              textAlign: 'center',
-              padding: '5px',
-              backgroundColor: '#e0e0e0',
-              borderRadius: '5px',
-            }}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      <h1>Add Task</h1>
     </section>
   )
 }
