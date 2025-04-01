@@ -54,32 +54,40 @@ const TaskForm = () => {
       </header>
 
       <form onSubmit={handleSubmit} className="task-form__form">
-        <label>
+        <label className="task-form__label">
           Title
-          <input type="text" />
+          <input type="text" className="task-form__input" />
         </label>
 
-        <label>
+        <label className="task-form__label">
           Title
-          <input type="text" />
+          <input type="text" className="task-form__input" />
         </label>
 
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+        <select
+          className="task-form__select"
+          value={priority}
+          onChange={(e) => setPriority(e.target.value)}
+        >
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
 
-        <label>
+        <label className="task-form__label">
           Tags
           <input
             type="text"
+            className="task-form__input"
             value={tagInput}
             onChange={(e) => setTagInput(e.target.value)}
             onKeyDown={handleTagInputChange}
             maxLength={12}
           />
         </label>
+
+        {error && <p className="task-form__error">{error}</p>}
+        <button className="task-form__button">Add Task</button>
       </form>
     </section>
   )
