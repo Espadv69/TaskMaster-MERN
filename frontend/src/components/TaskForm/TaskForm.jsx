@@ -6,7 +6,6 @@ import './TaskForm.css'
 const TaskForm = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [completed, setCompleted] = useState(false)
   const [priority, setPriority] = useState('low')
   const [tags, setTags] = useState([])
   const [tagInput, setTagInput] = useState('')
@@ -19,7 +18,6 @@ const TaskForm = () => {
     const result = await addTask({
       title,
       description,
-      completed,
       priority,
       tags,
     })
@@ -27,7 +25,6 @@ const TaskForm = () => {
     if (result) {
       setTitle('')
       setDescription('')
-      setCompleted(false)
       setPriority('low')
       setTags([])
       setTagInput('')
@@ -56,7 +53,34 @@ const TaskForm = () => {
         <h1 className="task-form__header-title">Add Task</h1>
       </header>
 
-      <form onSubmit={handleSubmit} className="task-form__form"></form>
+      <form onSubmit={handleSubmit} className="task-form__form">
+        <label>
+          Title
+          <input type="text" />
+        </label>
+
+        <label>
+          Title
+          <input type="text" />
+        </label>
+
+        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label>
+          Tags
+          <input
+            type="text"
+            value={tagInput}
+            onChange={(e) => setTagInput(e.target.value)}
+            onKeyDown={handleTagInputChange}
+            maxLength={12}
+          />
+        </label>
+      </form>
     </section>
   )
 }
