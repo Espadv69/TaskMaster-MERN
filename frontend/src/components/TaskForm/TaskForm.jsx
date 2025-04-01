@@ -89,6 +89,18 @@ const TaskForm = () => {
         {error && <p className="task-form__error">{error}</p>}
         <button className="task-form__button">Add Task</button>
       </form>
+
+      <footer className="task-form__footer">
+        <h2 className="task-form__footer-title">Tags Added</h2>
+
+        <div className="tags">
+          {tags.map((tag, index) => (
+            <span key={index} className="tag__span">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </footer>
     </section>
   )
 }
