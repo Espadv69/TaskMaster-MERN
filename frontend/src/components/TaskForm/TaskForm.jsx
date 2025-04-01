@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { addTask } from '../../services/taskService.js'
 
 import './TaskForm.css'
+import { set } from 'mongoose'
 
 const TaskForm = () => {
   const [title, setTitle] = useState('')
@@ -10,7 +11,7 @@ const TaskForm = () => {
   const [priority, setPriority] = useState('low')
   const [tags, setTags] = useState([])
   const [tagInput, setTagInput] = useState('')
-  // ToDo: Add error handling
+  const [error, setError] = useState('')
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -31,11 +32,13 @@ const TaskForm = () => {
       setPriority('low')
       setTags([])
       setTagInput('')
-      // ToDo: Add error handling
+      setError('')
     } else if (result === false) {
-      // ToDo: Add error handling for input error
+      setError('Please fill in all fields')
+      // ToDo: Add handling success message
     } else {
-      // ToDo: Add error handling for API error
+      setError('Something went wrong', result)
+      // ToDo: Add handling success message
     }
   }
 
