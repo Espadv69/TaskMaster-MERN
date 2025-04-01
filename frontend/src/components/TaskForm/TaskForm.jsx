@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { addTask } from '../../services/taskService.js'
 
 import './TaskForm.css'
-import { set } from 'mongoose'
 
 const TaskForm = () => {
   const [title, setTitle] = useState('')
