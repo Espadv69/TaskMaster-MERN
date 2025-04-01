@@ -17,6 +17,11 @@ const TaskForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (!title.trim() || !description.trim()) {
+      setError('Please fill in all fields')
+      return
+    }
+
     const result = await addTask({
       title,
       description,
@@ -30,12 +35,10 @@ const TaskForm = () => {
       setPriority('low')
       setTags([])
       setTagInput('')
+      setTagLength(0)
       setError('')
-    } else if (result === false) {
-      setError('Please fill in all fields')
-      // ToDo: Add handling success message
     } else {
-      setError('Something went wrong', result)
+      setError('Failed to add task. Please try again.')
       // ToDo: Add handling success message
     }
   }
@@ -117,7 +120,9 @@ const TaskForm = () => {
           ))}
         </div>
       </footer>
-      {tagLength} / {maxLength} tags added
+      <span className="tags__length">
+        {tagLength} / {maxLength} tags added
+      </span>
     </section>
   )
 }
