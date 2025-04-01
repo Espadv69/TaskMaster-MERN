@@ -13,6 +13,13 @@ const TaskForm = () => {
   const [tagInput, setTagInput] = useState('')
   const [error, setError] = useState('')
 
+  // Function to prevent form submission if the user presses Enter
+  const preventEnterSubmit = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+    }
+  }
+
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -72,7 +79,11 @@ const TaskForm = () => {
       <header className="task-form__header">
         <h1 className="task-form__header-title">Add Task</h1>
       </header>
-      <form onSubmit={handleSubmit} className="task-form__form">
+      <form
+        onSubmit={handleSubmit}
+        onKeyDown={preventEnterSubmit}
+        className="task-form__form"
+      >
         <label className="task-form__label">
           Title
           <input
