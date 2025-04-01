@@ -127,7 +127,7 @@
 @media (max-width: 550px) {
   .task-form__section {
     padding: 15px;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     max-width: 400px;
   }
 
@@ -152,5 +152,23 @@
   .task-form__button {
     font-size: 14px;
     padding: 8px;
+  }
+
+  .task-form__footer {
+    margin-top: 15px;
+    padding: 10px;
+  }
+
+  .task-form__footer-title {
+    font-size: 17px;
+  }
+
+  .tags {
+    gap: 6px;
+  }
+
+  .tag__span {
+    font-size: 13px;
+    padding: 4px 8px;
   }
 }
