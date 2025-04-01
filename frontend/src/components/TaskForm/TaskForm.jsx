@@ -66,6 +66,15 @@ const TaskForm = () => {
       // ToDo: Add error handling for API error
     }
   }
+
+  // Function to handle tag input change
+  const handleTagInputChange = (e) => {
+    if (e.key === 'Enter' && tagInput) {
+      e.preventDefault()
+      setTags({ ...tags, tagInput })
+      setTagInput('')
+    }
+  }
 }
 
 export default TaskForm
