@@ -104,15 +104,18 @@ const TaskForm = () => {
           />
         </label>
 
-        <select
-          className="task-form__select"
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
-        >
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
+        <label className="task-form__label">
+          Priority
+          <select
+            className="task-form__select"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
 
         <label className="task-form__label">
           Tags
