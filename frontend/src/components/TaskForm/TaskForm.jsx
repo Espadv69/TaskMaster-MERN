@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './TaskForm.css'
+import { addTask } from '../../services/taskService'
 
-const API_URL = 'http://localhost:5000/api/tasks'
+import './TaskForm.css'
 
 const TaskForm = () => {
   const [title, setTitle] = useState('')
