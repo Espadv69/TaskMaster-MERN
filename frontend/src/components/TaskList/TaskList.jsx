@@ -76,10 +76,10 @@ const TaskList = () => {
 
       <ul className="task-list">
         {loading ? (
-          <li className="task-list__loading-message">Cargando tareas...</li>
+          <li className="task-list__loading-message">Loading tasks...</li>
         ) : tasks.length === 0 ? (
           <li className="task-list__empty-message">
-            No hay tareas disponibles
+            No tasks available. Please add some tasks.
           </li>
         ) : (
           tasks.map((task) => (
@@ -96,12 +96,12 @@ const TaskList = () => {
                       task.completed ? 'completed' : 'pending'
                     }`}
                   >
-                    {task.completed ? 'Completada' : 'Pendiente'}
+                    {task.completed ? 'Completed' : 'Pending'}
                   </span>
                   <span
                     className={`task-list__priority priority-${task.priority}`}
                   >
-                    Prioridad: {task.priority}
+                    Priority: <strong>{task.priority}</strong>
                   </span>
                 </div>
 
