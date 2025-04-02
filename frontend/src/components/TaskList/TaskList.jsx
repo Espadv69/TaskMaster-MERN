@@ -89,6 +89,7 @@ const TaskList = () => {
                 {task.description && (
                   <p className="task-list__description">{task.description}</p>
                 )}
+
                 <div className="task-list__meta">
                   <span
                     className={`task-list__status ${
@@ -103,6 +104,7 @@ const TaskList = () => {
                     Prioridad: {task.priority}
                   </span>
                 </div>
+
                 {task.tags?.length > 0 && (
                   <div className="task-list__tags">
                     {task.tags.map((tag, index) => (
@@ -113,18 +115,22 @@ const TaskList = () => {
                   </div>
                 )}
               </div>
-              <button
-                className="task-list__toggle-button"
-                onClick={() => toggleTaskCompletion(task._id)}
-              >
-                {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
-              </button>
-              <button
-                className="task-list__delete-button"
-                onClick={() => deleteTask(task._id)}
-              >
-                Delete
-              </button>
+
+              <div className="task-list__actions">
+                <button
+                  className="task-list__toggle-button"
+                  onClick={() => toggleTaskCompletion(task._id)}
+                >
+                  {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
+                </button>
+
+                <button
+                  className="task-list__delete-button"
+                  onClick={() => deleteTask(task._id)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           ))
         )}
