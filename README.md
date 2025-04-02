@@ -74,7 +74,17 @@ PORT=5000
 
 ## 🎨 UI Preview
 
-soon...
+### TaskFormPage ✍️
+
+<p align="center">
+  <img src="./ImagesPreview/taskFormPage.png" alt="It will see a page with a form to fill in, and send data" />
+</p>
+
+### TaskListPage 👀
+
+<p align="center">
+  <img src="./ImagesPreview/taskListPage.png" alt="It will see a page with a list of taks" />
+</p>
 
 ## 🤝 Contributing
 
@@ -87,4 +97,3 @@ This project is licensed under the **[MIT License](https://opensource.org/licens
 ---
 
 Made with ❤️ by Espadv69
-
