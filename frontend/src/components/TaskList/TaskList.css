@@ -4,124 +4,97 @@
   --tertiary-color: #98D2C0;
   --quaternary-color: #F6F8D5;
   --accent-color: #4F959D;
+  --highlight-blue: #1E3A5F;
+  --danger-color: #D32F2F;
+  --success-color: #2E7D32;
+  --warning-color: #FF8F00;
 }
 
 .task-list__section {
-  background-color: var(--quaternary-color);
-  padding: 10px;
-  border-radius: 10px;
-  max-width: 600px;
   margin: 2rem auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.task-list__header {
-  text-align: center;
-  margin-bottom: 15px;
+  max-width: 600px;
+  background-color: var(--quaternary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .task-list__header-title {
-  color: var(--primary-color);
+  color: var(--highlight-blue);
+  text-align: center;
   font-size: 24px;
-  font-weight: bold;
 }
 
 .task-list {
   list-style: none;
   padding: 0;
+
   height: 70dvh;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--secondary-color) var(--quaternary-color);
-}
-
-.task-list__loading-message,
-.task-list__empty-message {
-  text-align: center;
-  font-size: 1rem;
-  color: var(--primary-color);
-}
-
-.task-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.task-list::-webkit-scrollbar-thumb {
-  background-color: var(--secondary-color);
-  border-radius: 4px;
+  overflow-x: hidden;
 }
 
 .task-list__item {
   background-color: var(--tertiary-color);
-  margin-bottom: 12px;
+  border-left: 6px solid var(--accent-color);
   padding: 15px;
+  margin-bottom: 12px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeIn 0.4s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.task-list__content {
+  flex-grow: 1;
 }
 
 .task-list__title {
-  color: var(--primary-color);
-  font-size: 1.2rem;
-  margin: 0 0 5px 0;
+  color: var(--highlight-blue);
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .task-list__description {
-  color: var(--secondary-color);
-  font-size: 1rem;
-  margin: 0 0 10px 0;
+  color: var(--primary-color);
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .task-list__meta {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
+  justify-content: start;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .task-list__status {
   font-weight: bold;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border-radius: 5px;
+  font-size: 12px;
 }
 
 .task-list__status.completed {
-  background-color: #4CAF50;
+  background-color: var(--success-color);
   color: white;
 }
 
 .task-list__status.pending {
-  background-color: #FF9800;
+  background-color: var(--danger-color);
   color: white;
 }
 
 .task-list__priority {
-  font-weight: bold;
-}
-
-.priority-high {
-  color: red;
-}
-
-.priority-medium {
-  color: orange;
-}
-
-.priority-low {
-  color: green;
+  background-color: var(--warning-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
 .task-list__tags {
@@ -129,12 +102,45 @@
 }
 
 .task-list__tag {
-  display: inline-block;
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   color: white;
-  padding: 3px 8px;
-  margin-right: 5px;
+  padding: 4px 10px;
   border-radius: 5px;
-  font-size: 0.85rem;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.task-list__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-list__toggle-button,
+.task-list__delete-button {
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
   font-weight: bold;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.task-list__toggle-button {
+  background-color: var(--highlight-blue);
+}
+
+.task-list__toggle-button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.task-list__delete-button {
+  background-color: var(--danger-color);
+}
+
+.task-list__delete-button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
 }
