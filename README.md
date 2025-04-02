@@ -80,10 +80,22 @@ PORT=5000
   <img src="./ImagesPreview/taskFormPage.png" alt="It will see a page with a form to fill in, and send data" />
 </p>
 
+### Responsive TaskFormPage ✍️
+
+<p align="center">
+  <img src="./ImagesPreview/responsiveForm.png" alt="It will see a page with a form to fill in, and send data" />
+</p>
+
 ### TaskListPage 👀
 
 <p align="center">
   <img src="./ImagesPreview/taskListPage.png" alt="It will see a page with a list of taks" />
+</p>
+
+### Responsive TaskListPage 👀
+
+<p align="center">
+  <img src="./ImagesPreview/responsiveList.png" alt="It will see a page with a list of taks" />
 </p>
 
 ## 🤝 Contributing
