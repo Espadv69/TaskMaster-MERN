@@ -17,8 +17,13 @@ const TaskList = () => {
         const data = await response.json()
         setTasks(data)
         setLoading(false)
-      } catch (err) {}
+      } catch (err) {
+        console.error('Error fetching tasks:', err.message)
+        setLoading(false)
+      }
     }
+
+    fetchTasks()
   }, [])
 }
 
