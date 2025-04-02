@@ -22,7 +22,7 @@
 
 .task-list__header-title {
   color: var(--primary-color);
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: bold;
 }
 
