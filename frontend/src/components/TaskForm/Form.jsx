@@ -86,7 +86,7 @@ const Form = () => {
           labelTitle="Title"
           inputValue={title}
           setInputValue={setTitle}
-          setInputLength={20}
+          setInputLength={30}
           placeholder="Enter task title"
         />
 
@@ -94,7 +94,7 @@ const Form = () => {
           labelTitle="Description"
           inputValue={description}
           setInputValue={setDescription}
-          setInputLength={100}
+          setInputLength={255}
           placeholder="Enter task description"
         />
 
