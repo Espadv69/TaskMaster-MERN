@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_URL, API_URL_ID } from '../../utils/routesString'
+import { API_URL } from '../../utils/routesString'
 import './TaskList.css'
 
 const TaskList = () => {
@@ -53,6 +53,21 @@ const TaskList = () => {
     }
   }
 
+  // Function to handle task deletion
+  const deleteTask = async (taskId) => {
+    try {
+      const response = await fetch(`${API_URL}/${taskId}`, {
+        method: 'DELETE',
+      })
+
+      if (!response.ok) throw new Error('Failed to delete task')
+
+      setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId))
+    } catch (err) {
+      console.error('Error deleting task:', err.message)
+    }
+  }
+
   return (
     <section className="task-list__section">
       <header className="task-list__header">
@@ -103,6 +118,12 @@ const TaskList = () => {
                 onClick={() => toggleTaskCompletion(task._id)}
               >
                 {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
+              </button>
+              <button
+                className="task-list__delete-button"
+                onClick={() => deleteTask(task._id)}
+              >
+                Delete
               </button>
             </li>
           ))
