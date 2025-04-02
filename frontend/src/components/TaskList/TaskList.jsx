@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_URL } from '../../utils/routesString'
+import { API_URL, API_URL_ID } from '../../utils/routesString'
 import './TaskList.css'
 
 const TaskList = () => {
@@ -25,6 +25,33 @@ const TaskList = () => {
 
     fetchTasks()
   }, [])
+
+  // Function to handle task completion toggle
+  const toggleTaskCompletion = async (taskId) => {
+    try {
+      const task = tasks.find((task) => task._id === taskId)
+      if (!task) throw new Error('Task not found')
+
+      const updatedTask = { ...task, completed: !task.completed }
+      const response = await fetch(`${API_URL}/${taskId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedTask),
+      })
+
+      if (!response.ok) throw new Error('Failed to update task')
+
+      const data = await response.json()
+
+      setTasks((prevTasks) =>
+        prevTasks.map((task) => (task._id === taskId ? data : task)),
+      )
+    } catch (err) {
+      console.error('Error updating task:', err.message)
+    }
+  }
 
   return (
     <section className="task-list__section">
@@ -71,6 +98,12 @@ const TaskList = () => {
                   </div>
                 )}
               </div>
+              <button
+                className="task-list__toggle-button"
+                onClick={() => toggleTaskCompletion(task._id)}
+              >
+                {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
+              </button>
             </li>
           ))
         )}
