@@ -90,21 +90,6 @@ const TaskList = () => {
                   <p className="task-list__description">{task.description}</p>
                 )}
 
-                <div className="task-list__meta">
-                  <span
-                    className={`task-list__status ${
-                      task.completed ? 'completed' : 'pending'
-                    }`}
-                  >
-                    {task.completed ? 'Completed' : 'Pending'}
-                  </span>
-                  <span
-                    className={`task-list__priority priority-${task.priority}`}
-                  >
-                    Priority: <strong>{task.priority}</strong>
-                  </span>
-                </div>
-
                 {task.tags?.length > 0 && (
                   <div className="task-list__tags">
                     {task.tags.map((tag, index) => (
@@ -114,6 +99,21 @@ const TaskList = () => {
                     ))}
                   </div>
                 )}
+              </div>
+
+              <div className="task-list__meta">
+                <span
+                  className={`task-list__status ${
+                    task.completed ? 'completed' : 'pending'
+                  }`}
+                >
+                  {task.completed ? 'Completed' : 'Pending'}
+                </span>
+                <span
+                  className={`task-list__priority priority-${task.priority}`}
+                >
+                  Priority: <strong>{task.priority}</strong>
+                </span>
               </div>
 
               <div className="task-list__actions">
