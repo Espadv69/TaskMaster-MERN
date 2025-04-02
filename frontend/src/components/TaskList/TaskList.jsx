@@ -25,6 +25,30 @@ const TaskList = () => {
 
     fetchTasks()
   }, [])
+
+  return (
+    <section className="task-list__section">
+      <header className="task-list__header">
+        <h1 className="task-list__header-title">Task List</h1>
+      </header>
+
+      <ul className="task-list__ul">
+        {loading ? (
+          <li>Loanding...</li>
+        ) : tasks.length === 0 ? (
+          <li>No tasks available</li>
+        ) : (
+          tasks.map((task) => (
+            <li key={task._id} className="task-list__li">
+              <h2 className="task-list__li-title">{task.title}</h2>
+              <p className="task-list__li-description">{task.description}</p>
+              <p className="task-list__li-status">{task.completed}</p>
+            </li>
+          ))
+        )}
+      </ul>
+    </section>
+  )
 }
 
 export default TaskList
