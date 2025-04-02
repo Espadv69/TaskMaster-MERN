@@ -38,9 +38,8 @@
 .task-list__loading-message,
 .task-list__empty-message {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--primary-color);
-  margin-top: 10px;
 }
 
 .task-list::-webkit-scrollbar {
@@ -68,6 +67,7 @@
     opacity: 0;
     transform: translateY(15px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
