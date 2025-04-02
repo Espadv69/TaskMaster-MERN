@@ -34,6 +34,31 @@
   overflow-x: hidden;
 }
 
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: var(--quaternary-color);
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: var(--highlight-blue);
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+.task-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--highlight-blue) var(--quaternary-color);
+}
+
+
 .task-list__item {
   background-color: var(--tertiary-color);
   border-left: 6px solid var(--accent-color);
@@ -42,9 +67,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  gap: .3rem;
   transition: transform 0.2s ease-in-out;
 }
 
