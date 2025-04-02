@@ -32,17 +32,45 @@ const TaskList = () => {
         <h1 className="task-list__header-title">Task List</h1>
       </header>
 
-      <ul className="task-list__ul">
+      <ul className="task-list">
         {loading ? (
-          <li>Loanding...</li>
+          <li className="task-list__loading-message">Cargando tareas...</li>
         ) : tasks.length === 0 ? (
-          <li>No tasks available</li>
+          <li className="task-list__empty-message">
+            No hay tareas disponibles
+          </li>
         ) : (
           tasks.map((task) => (
-            <li key={task._id} className="task-list__li">
-              <h2 className="task-list__li-title">{task.title}</h2>
-              <p className="task-list__li-description">{task.description}</p>
-              <p className="task-list__li-status">{task.completed}</p>
+            <li key={task._id} className="task-list__item">
+              <div className="task-list__content">
+                <h2 className="task-list__title">{task.title}</h2>
+                {task.description && (
+                  <p className="task-list__description">{task.description}</p>
+                )}
+                <div className="task-list__meta">
+                  <span
+                    className={`task-list__status ${
+                      task.completed ? 'completed' : 'pending'
+                    }`}
+                  >
+                    {task.completed ? 'Completada' : 'Pendiente'}
+                  </span>
+                  <span
+                    className={`task-list__priority priority-${task.priority}`}
+                  >
+                    Prioridad: {task.priority}
+                  </span>
+                </div>
+                {task.tags?.length > 0 && (
+                  <div className="task-list__tags">
+                    {task.tags.map((tag, index) => (
+                      <span key={index} className="task-list__tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </li>
           ))
         )}
