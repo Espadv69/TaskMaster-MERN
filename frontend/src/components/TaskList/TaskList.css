@@ -3,12 +3,13 @@
   --secondary-color: #4F959D;
   --tertiary-color: #98D2C0;
   --quaternary-color: #F6F8D5;
+  --accent-color: #4F959D;
 }
 
 .task-list__section {
   background-color: var(--quaternary-color);
-  padding: 20px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 10px;
   max-width: 600px;
   margin: 2rem auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -22,25 +23,47 @@
 .task-list__header-title {
   color: var(--primary-color);
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .task-list {
   list-style: none;
   padding: 0;
-
   height: 70dvh;
   overflow-y: auto;
-  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--quaternary-color);
+}
+
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 4px;
 }
 
 .task-list__item {
-  cursor: pointer;
   background-color: var(--tertiary-color);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-x: hidden;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .task-list__title {
@@ -50,7 +73,7 @@
 }
 
 .task-list__description {
-  color: var(--quaternary-color);
+  color: var(--secondary-color);
   font-size: 1rem;
   margin: 0 0 10px 0;
 }
@@ -63,8 +86,8 @@
 
 .task-list__status {
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: 5px;
 }
 
 .task-list__status.completed {
@@ -99,16 +122,11 @@
 
 .task-list__tag {
   display: inline-block;
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   color: white;
   padding: 3px 8px;
   margin-right: 5px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.task-list__tag:hover {
-  background-color: var(--primary-color);
-  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
 }
