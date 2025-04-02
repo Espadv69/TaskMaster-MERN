@@ -167,3 +167,63 @@
   background-color: #b71c1c;
   transform: scale(1.05);
 }
+
+@media (max-width: 550px) {
+  .task-list__section {
+    margin: 1rem auto;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .task-list__header-title {
+    font-size: 20px;
+  }
+
+  .task-list {
+    height: 70dvh;
+  }
+
+  .task-list__item {
+    padding: 10px;
+    gap: 0.2rem;
+  }
+
+  .task-list__title {
+    font-size: 16px;
+  }
+
+  .task-list__description {
+    font-size: 12px;
+  }
+
+  .task-list__meta {
+    gap: 5px;
+  }
+
+  .task-list__status,
+  .task-list__priority {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .task-list__tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .task-list__actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .task-list__toggle-button,
+  .task-list__delete-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .task-list__toggle-button:hover,
+  .task-list__delete-button:hover {
+    transform: scale(1.01);
+  }
+}
