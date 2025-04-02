@@ -1,0 +1,108 @@
+:root {
+  --primary-color: #205781;
+  --secondary-color: #4F959D;
+  --tertiary-color: #98D2C0;
+  --quaternary-color: #F6F8D5;
+}
+
+.task-list__section {
+  background-color: var(--quaternary-color);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-list__header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.task-list__header-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+
+  height: 70dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.task-list__item {
+  cursor: pointer;
+  background-color: var(--tertiary-color);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+
+.task-list__title {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
+.task-list__description {
+  color: var(--quaternary-color);
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+}
+
+.task-list__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.task-list__status {
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.task-list__status.completed {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.task-list__status.pending {
+  background-color: #FF9800;
+  color: white;
+}
+
+.task-list__priority {
+  font-weight: bold;
+}
+
+.priority-high {
+  color: red;
+}
+
+.priority-medium {
+  color: orange;
+}
+
+.priority-low {
+  color: green;
+}
+
+.task-list__tags {
+  margin-top: 10px;
+}
+
+.task-list__tag {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 3px 8px;
+  margin-right: 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
