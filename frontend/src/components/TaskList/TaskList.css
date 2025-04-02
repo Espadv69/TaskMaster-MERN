@@ -35,6 +35,14 @@
   scrollbar-color: var(--secondary-color) var(--quaternary-color);
 }
 
+.task-list__loading-message,
+.task-list__empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-top: 10px;
+}
+
 .task-list::-webkit-scrollbar {
   width: 8px;
 }
